@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>
+      <%= title %>
+    </title>
+    <style>
+      <%= githubMarkdownCss %>
+    </style>
+    <style>
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+    </style>
+    <style>
+      <%=highlightJsThemeCss %>
+    </style>
+    <style>
+      body.markdown-body pre {
+        color: #8be9fd;
+      }
+      body.markdown-body .hljs,
+      body.markdown-body pre,
+      body.markdown-body code {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: #282a36 !important;
+      }
+      body.markdown-body .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: #282a36;
+      }
+      body.markdown-body .hljs-keyword,
+      body.markdown-body .hljs-selector-tag,
+      body.markdown-body .hljs-literal,
+      body.markdown-body .hljs-section,
+      body.markdown-body .hljs-link {
+        color: #8be9fd;
+      }
+      body.markdown-body .hljs-function .hljs-keyword {
+        color: #ff79c6;
+      }
+      body.markdown-body .hljs,
+      body.markdown-body .hljs-subst {
+        color: #f8f8f2;
+      }
+      body.markdown-body .hljs-string,
+      body.markdown-body .hljs-title,
+      body.markdown-body .hljs-name,
+      body.markdown-body .hljs-type,
+      body.markdown-body .hljs-attribute,
+      body.markdown-body .hljs-symbol,
+      body.markdown-body .hljs-bullet,
+      body.markdown-body .hljs-addition,
+      body.markdown-body .hljs-variable,
+      body.markdown-body .hljs-template-tag,
+      body.markdown-body .hljs-template-variable {
+        color: #f1fa8c;
+      }
+      body.markdown-body .hljs-comment,
+      body.markdown-body .hljs-quote,
+      body.markdown-body .hljs-deletion,
+      body.markdown-body .hljs-meta {
+        color: #6272a4;
+      }
+      body.markdown-body .hljs-keyword,
+      body.markdown-body .hljs-selector-tag,
+      body.markdown-body .hljs-literal,
+      body.markdown-body .hljs-title,
+      body.markdown-body .hljs-section,
+      body.markdown-body .hljs-doctag,
+      body.markdown-body .hljs-type,
+      body.markdown-body .hljs-name,
+      body.markdown-body .hljs-strong {
+        font-weight: bold;
+      }
+      body.markdown-body .hljs-emphasis {
+        font-style: italic;
+      }
+
+      body.markdown-body .hljs-built_in {
+        color: #ff79c6;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+      body.markdown-body {
+        padding-left: 250px !important;
+      }
+      body.markdown-body .toc-list {
+        padding: 10px;
+        border-right: 2px solid #ccc;
+        width: 250px !important;
+        position: fixed !important;
+        left: 0;
+        top: 0;
+        height: 100%;
+        bottom: 0;
+        z-index: 999;
+        overflow: auto;
+        list-style: none;
+      }
+      body.markdown-body .toc-list ul,
+      body.markdown-body .toc-list li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      body.markdown-body .toc-list > li {
+        margin-left: 5px;
+      }
+      body.markdown-body .toc-list > li li {
+        margin-left: 9px;
+      }
+      body.markdown-body .toc-list a {
+        font-size: 16px;
+        padding: 4px;
+        display: block;
+        border-bottom: 1px solid rgba(172, 183, 204, 0.61);
+      }
+    </style>
+  </head>
+
+  <body class="markdown-body">
+    <%= content %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/bash.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", event => {
+        document.querySelectorAll("code").forEach(block => {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
+    <script>
+      $("ul")
+        .first()
+        .addClass("toc-list");
+    </script>
+  </body>
+</html>
